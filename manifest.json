@@ -1,0 +1,11 @@
+{
+  "domain": "352",
+  "name": "352 Air Purifier",
+  "documentation": "https://github.com/custom-components/352",
+  "dependencies": [],
+  "codeowners": [],
+  "requirements": ["requests"],
+  "version": "1.0.0",
+  "config_flow": false,
+  "iot_class": "cloud_polling"
+}
