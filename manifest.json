@@ -1,7 +1,7 @@
 {
   "domain": "352",
   "name": "352 Platform",
-  "documentation": "https://github.com/custom-components/352",
+  "documentation": "https://github.com/geminiwen/hass-352",
   "dependencies": [],
   "codeowners": [],
   "requirements": ["requests"],
