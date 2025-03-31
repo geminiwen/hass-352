@@ -1,6 +1,8 @@
 """352 Air Purifier integration."""
 import logging
 import requests
+import voluptuous as vol
+import homeassistant.helpers.config_validation as cv
 from datetime import timedelta
 
 from homeassistant.const import (
@@ -12,6 +14,8 @@ from homeassistant.core import HomeAssistant
 from homeassistant.helpers.entity_platform import AddEntitiesCallback
 from homeassistant.helpers.typing import ConfigType, DiscoveryInfoType
 from homeassistant.util import Throttle
+from homeassistant.components.sensor import PLATFORM_SCHEMA
+
 
 _LOGGER = logging.getLogger(__name__)
 
@@ -19,7 +23,7 @@ DOMAIN = "352"
 SCAN_INTERVAL = timedelta(minutes=5)
 API_ENDPOINT = "https://app.352air.com/api"  # 替换为实际的API地址
 
-PLATFORM_SCHEMA = vol.Schema({
+PLATFORM_SCHEMA = PLATFORM_SCHEMA.extend({
     vol.Required(CONF_USERNAME): cv.string,
     vol.Required(CONF_PASSWORD): cv.string
 })
@@ -98,7 +102,7 @@ class AirPurifierSensor(SensorEntity):
 
     @property
     def unique_id(self):
-        return "352_air_4F1Dlq5rooAZmvzbu0xU000000"
+        return "sensor.352_air_4F1Dlq5rooAZmvzbu0xU000000"
 
     @property
     def extra_state_attributes(self):
